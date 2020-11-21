@@ -1,4 +1,4 @@
-FROM python:rc-alpine
+FROM python:3.9-alpine
 
 LABEL base.image="python:rc-alpine"
 LABEL description="A Python container."
