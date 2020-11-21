@@ -13,6 +13,12 @@ ENV HOME /home/$USER
 
 USER root
 
+RUN set -xe; \
+    \
+    apk add --update --no-cache \
+        bash; \
+    rm -rf /var/cache/apk/*;
+
 # Creates work user.
 RUN \
     addgroup -g "${CABANA_USER_ID}" -S $USER; \
