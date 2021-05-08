@@ -1,10 +1,9 @@
-FROM cabanaonline/ubuntu:1.0
+FROM cabanaonline/ubuntu-dev:16.04
 
-LABEL base.image="cabanaonline/alpine"
+LABEL base.image="cabanaonline/ubuntu-dev:16.04"
 LABEL description="A Python container."
 LABEL maintainer="Alejandro Madrigal Leiva"
 LABEL maintainer.email="me@alemadlei.tech"
-
 
 ARG USER=cabana
 ENV HOME /home/$USER
@@ -13,7 +12,11 @@ USER root
 
 # Install python.
 RUN set -xe; \
-    apt-get install -y python python3-pip && \
+    apt-get update;
+
+RUN set -xe; \
+    apt-get update && \
+    apt-get install -y python python-pip && \
     apt-get clean && \
     apt-get autoclean;
 

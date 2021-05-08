@@ -1,6 +1,6 @@
 REPO = cabanaonline/python
 NAME = python
-TAG = 1.0
+TAG = 2.7
 
 .PHONY: build test push shell run start stop logs clean release
 
